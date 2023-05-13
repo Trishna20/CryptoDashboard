@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&family=Roboto:ital,wght@0,100;0,300;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+    <script src="./index.js"></script>
+    <style>
+        *{
+            margin: 0;
+            font-family: 'Roboto Condensed', sans-serif;
+        }
+        .navbarbg{
+            background-color: white;
+            border-bottom: 1px solid rgb(205, 202, 202);
+            max-width: 100%;
+        }
+        .bgColor{
+            background-color: #f0f0f0;
+        }
+        .inputStyle{
+            background-color: transparent;
+            border: none;
+            outline: none;
+        }
+        .sidebar{
+            width: 350px;
+            max-height: 100%;
+            color: white;
+            position: relative;
+        }
+        .customImage{
+            width: 40px;
+            height: 40px;
+            border-radius: 25px;
+        }
+        .textStyle{
+            color: #999999;
+            font-size: 15px;
+        }
+        .textStyle:hover{
+            color: white;
+        }
+        .bor{
+            border: 1px solid rgb(205, 202, 202);
+            border-radius: 10px;
+        }
+        .drop{
+            border: none;
+            color: #999999;
+        }
+        .pagination{
+            display: flex;
+        }
+        .pagination a{
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+        }
+        .pagination a.active{
+            background-color: blue;
+            color: white;
+        }
+        .pagination a:hover:not(.active){
+            background-color: black;
+            color: white;
+        }
+        .winners{
+            background-color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 10px;
+            width: 350px;
+        }
+        .search_box{
+            background-color: white;
+            width: 400px;
+            border: 1px solid rgb(205, 202, 202);
+            border-radius: 10px;
+        }
+        .new{
+            color: #999999;
+            font-size: 15px;
+        }
+        .eye{
+            border: 1px solid rgb(205, 202, 202);
+            border-radius: 10px;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .late{
+            position: absolute;
+            bottom: 0;
+        }
+        .select{
+            width: 200px;
+            height: 100px;
+        }
+        .apple{
+            border: 0.5px solid #999999;
+            height: 30px;
+            display: flex;
+            justify-content: space-between;
+            padding-top: 2px;
+            padding-bottom: 2px;
+            padding-left: 2px;
+        }
+        .light{
+            background-color: #999999;
+            color: white;
+            width: 100px;
+        }
+        .now{
+            display: flex;
+            align-items: center;
+        }
+        .now:hover{
+            background-color: white;
+        }
+        .green{
+            color: green;
+        }
+        .red{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbarbg mx-3 py-2 d-flex justify-content-between">
+        <div>
+            <span>
+                <i class="fa-brands fa-slack"></i> Slack
+            </span>
+            <span class="bgColor rounded-pill px-3 py-2 ms-4">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search all assets" class="inputStyle">
+            </span>
+        </div>
+        <div>
+            <button class="btn btn-light rounded-pill">Swap</button>
+            <button class="btn btn-primary rounded-pill ">Connect Wallet</button>
+            <i class="fa-regular fa-bell ms-2"></i>
+        </div>
+    </nav>
+    <div class="wrapper d-flex">
+        <div class="sidebar bg-dark">
+            <div>
+                <div class="customCard d-flex px-4 pt-2">
+                    <img src="fox.png " alt="" class="img_thumbnail customImage">
+                    <div class="ms-2">
+                        <p class="mb-0">MetaMask</p>
+                        <p class="textStyle">$2345.456 <i class="ms-1 fa-regular fa-eye"></i></p>
+                    </div>
+                </div>
+                <hr class="m-0"/>
+                <div class="d-flex align-items-center px-4 pt-4">
+                    <i class="fa-solid fa-chart-pie textStyle"></i>
+                    <p class="textStyle ms-2 m-0">Market</p>
+                </div>
+                <div class="btn-group px-3 pt-4">
+                    <button type="button" class="btn btn-secondary bg-dark border-0 d-flex">
+                        <i class="fa-solid fa-square-minus textStyle"></i>
+                        <p class="textStyle ms-2 m-0">Pools</p>
+                    </button>
+                    <button type="button" class="btn btn-secondary bg-dark border-0 dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false"></button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Separated link</a></li>
+                    </ul>
+                </div>
+                <div class="d-flex align-items-center px-4 pt-4">
+                    <i class="fa-solid fa-paper-plane textStyle"></i>
+                    <p class="textStyle ms-2 m-0">Transfer</p>
+                </div>
+                <div class="d-flex align-items-center px-4 pt-4">
+                    <p class="drop ms-0 m-0">Account</p>
+                </div>
+                <div class="btn-group px-3 pt-4">
+                    <button type="button" class="btn btn-secondary bg-dark border-0 d-flex">
+                        <i class="fa-solid fa-wallet textStyle me-1"></i>
+                        <p class="textStyle ms-2 m-0">Portfolio</p>
+                    </button>
+                    <button type="button" class="btn btn-secondary bg-dark border-0 dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false"></button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Separated link</a></li>
+                    </ul>
+                </div>
+                <div class="d-flex align-items-center px-4 pt-3">
+                    <i class="fa-solid fa-clipboard-list textStyle"></i>
+                    <p class="textStyle ms-2 m-0">History</p>
+                </div>
+                <div class="d-flex align-items-center px-4 pt-3">
+                    <i class="fa-solid fa-user-plus textStyle"></i>
+                    <span class="textStyle ms-2 m-0">Invite Friends</span>
+                    <button class="btn btn-primary rounded-pill ms-4">Earn 50%</button>
+                </div>
+                <div class="d-flex align-items-center px-4 pt-3">
+                    <i class="fa-sharp fa-solid fa-gear textStyle"></i>
+                    <p class="textStyle ms-2 m-0">Settings</p>
+                </div>
+                <div class="d-flex align-items-center px-4 pt-4">
+                    <p class="drop ms-0 m-0">Currency</p>
+                </div>
+                <div class="btn-group px-2 pt-4">
+                    <button type="button" class="btn btn-secondary bg-dark border-0 d-flex">
+                        <p class="textStyle ms-2 m-0">Choose</p>
+                    </button>
+                    <button type="button" class="btn btn-secondary bg-dark border-0 dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false"></button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#"><img src="america.png" width="20px" height="20px"> USD</a></li>
+                        <li><a class="dropdown-item" href="#"><img src="india.png" width="20px" height="20px"> INR</a></li>
+                        <li><a class="dropdown-item" href="#"><img src="uk.png" width="20px" height="20px"> EUR</a></li>
+                    </ul>
+                </div>
+                <br>
+                <br>
+                <div class="late">
+                    <div class="drop d-flex align-items-center px-4 pt-4">
+                        <i class="fa-regular fa-circle-question"></i>
+                        <p class="ms-2 m-0">Get Support</p>
+                    </div>
+                    <div class="drop d-flex align-items-center px-4 pt-4">
+                        <i class="fa-regular fa-comment-dots"></i>
+                        <p class="ms-2 m-0">Give feedback</p>
+                    </div>
+                    <br>
+                    <div class="select ms-4">
+                        <div class="apple rounded-pill ms-0">
+                            <div class="light rounded-pill ms-0">
+                                <pre><b>          Light</b> </pre>
+                            </div>
+                            <div class="me-4">Dark</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content w-100 m-5 justify-content-between">
+            <h2>Your top winners today<br><br></h2>
+            <div class="d-flex justify-content-between">
+                <div class="bor winners px-3">
+                    <div class="d-flex">
+                        <img src="Bitcoin-Logo.png" alt="" class="img_thumbnail customImage">
+                        <div class="ms-2">
+                            <p class="mb-0">Bitcoin</p>
+                            <p class="new">BTC</p>
+                        </div>
+                    </div>
+                    <div>
+                        <p style="color: rgb(35, 189, 148);">32%</p>
+                        <p class="new">$431.00</p>
+                    </div>
+                </div>
+                <pre><br></pre>
+                <div class="bor winners px-3">
+                    <div class="d-flex">
+                    <img src="stellar.png" alt="" class="img_thumbnail customImage">
+                    <div class="ms-2">
+                        <p class="mb-0">Stellar</p>
+                        <p class="new">XLM</p>
+                    </div>
+                </div>
+                <div>
+                    <p style="color: rgb(35, 189, 148);">6%</p>
+                    <p class="new">$2,131.00</p>
+                </div>
+            </div>
+            <pre><br></pre>
+            <div class="bor winners px-3">
+                <div class="d-flex">
+                <img src="avalanche.png" alt="" class="img_thumbnail customImage">
+                <div class="ms-2">
+                    <p class="mb-0">Avalanche</p>
+                    <p class="new">
+                        AVAX
+                    </p>
+                </div>
+            </div>
+                <div>
+                    <p style="color: rgb(35, 189, 148);">12%</p>
+                    <p class="new">$55.00</p>
+                </div>
+            </div>
+            <pre><br></pre>
+        </div>
+        <br><br>
+        <h5>Your Holdings</h5><br>
+        <div class="d-flex justify-content-between">
+            <div class="d-flex">
+                <div class="search_box rounded-pill px-3 py-2 ms-0">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search all assets" class="inputStyle">
+                </div>
+                <div class="dropdown ms-4">
+                    <button class="btn bor dropdown-toggle rounded-pill" type="button" data-bs-toggle="dropdown" aria-expanded="false">All networks</button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="eye rounded-pill">
+                <i class="fa-regular fa-eye fa-xl"></i>
+            </div>
+        </div>
+        <br>
+        <div class="bor">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Asset</th>
+                        <th scope="col">Amount</th>
+                        <th scope="col">Value in USD</th>
+                        <th scope="col">Change % (24H - Low)</th>
+                        <th scope="col">Change % (24H - High)</th>
+                    </tr>
+                </thead>
+                <tbody id="cryptodata">
+                    <tr>
+                        <th scope="row"><div class="customCard d-flex px-4 pt-2">
+                            <img src="stellar.png" alt="" class="img_thumbnail customImage">
+                            <div class="ms-2">
+                                <p class="mb-0">Stellar</p>
+                                <p class="new">XLM</p>
+                            </div>
+                        </th>
+                        <td>0.32</td>
+                        <td>$3,352</td>
+                        <td style="color: rgb(35, 189, 148);">2%</td>
+                        <td style="color: rgb(35, 189, 148);">12%</td>
+                        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <pre><br></pre>
+        <div>
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a class="page-link rounded-pill ms-3" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item"><a class="page-link rounded-pill ms-3" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link rounded-pill ms-3" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link rounded-pill ms-3" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link rounded-pill ms-3" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        </div>
+    </div>
+</body>
+</html>
